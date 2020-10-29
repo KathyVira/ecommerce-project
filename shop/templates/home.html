@@ -1,10 +1,51 @@
 
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block title %}
 Home Page
 {% endblock %}
 
 {% block content %}
-<h1>Home Page</h1>
+
+<div class="container-fluid">
+	<div class="row">
+		<img class="img-fluid" src="{% static 'images/tel-aviv_bg.jpg' %}" alt="background">
+	</div>
+
+</div>
+<div class="py-4">
+	<div class="container">
+		<div class="row">
+			<div class="col-10 mx-auto my-2 text-center">
+				<h1 class="text-capitalize font-weight-bold">Our Products</h1>
+			</div>
+		</div>		
+	</div>
+	
+</div>
+
+
+<div class="container">
+	<div class="row">
+	{% for i in 'aaaaaaaa' %}
+		<div class="col-9 mx-auto col-md-6 col-lg-3 ">
+			<div class="card mb-4 shadow">
+				<div class="p-4">
+					<img class="card-img-top" src="{% static 'images/a1.png' %}" alt="">
+				</div>
+				
+				<div class="card-footer d-flex justify-content-between" style="background-color: transparent; border-color: transparent;: ">
+					<p class="font-weight-bold md-0">
+						TeeShert
+					</p>
+					<h5 class="text-info font-italic md-0"> 9.99 $</h5>
+				</div>
+			</div>
+		</div>
+
+	{% endfor %}
+	</div>	
+</div>
 {% endblock %}
