@@ -19,3 +19,15 @@ body{
 	text-transform: uppercase;
 	letter-spacing: .2em;
 }
+
+	.header{
+
+		background: url('{% static 'images/tel-aviv_bg.jpg' %}') no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        height: 300px; 
+
+        margin-bottom: 30px;
+    }

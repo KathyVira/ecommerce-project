@@ -10,10 +10,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
-from pathlib import Path
+# from pathlib import Path
+import os
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+# BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -63,6 +65,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'shop.context_processors.menu_links',
             ],
         },
     },
@@ -130,11 +133,24 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 
+
+
+# STATICFILES_DIRS = [
+#     BASE_DIR / 'ecommerce/static/'
+# ]
+# STATIC_URL = '/static/'
+# STATIC_ROOT = BASE_DIR / 'static'
+
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = BASE_DIR / 'static/images'
+
+
 STATICFILES_DIRS = [
-    BASE_DIR / 'ecommerce/static/'
+    os.path.join(BASE_DIR, 'ecommerce/static/')
 ]
+
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'static'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'static' / 'media'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'media')
